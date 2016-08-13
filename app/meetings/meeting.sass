@@ -1,0 +1,144 @@
+// Meeting cards: shared
+.meeting-content
+  position: relative
+
+  .book-detail
+    width: 7em
+    position: absolute
+    right: 0
+    top: 50%
+    transform: translateY(-50%)
+
+    img
+      display: inline-block
+      text-align: center
+      vertical-align: middle
+      height: 6em
+
+  .meeting-detail
+    width: calc(100% - 7em)
+    min-height: 6em
+    margin: 0 0.5rem
+
+    .meeting-date
+      font-weight: 700
+
+    .meeting-title
+      margin-top: 0.33em
+      font-style: italic
+
+    .meeting-author
+      margin-bottom: 0.33em
+
+    .meeting-time
+      font-size: 0.7em
+
+    .meeting-location
+      font-size: 0.7em
+      text-transform: uppercase
+      font-weight: 700
+    .meeting-location-detail
+      font-size: 0.7em
+      text-transform: uppercase
+
+// Header card
+.this-meeting
+  margin-bottom: 3em
+  h1
+    text-align: center
+    font-weight: 700
+    #line1
+      font-family: 'Bebas Neue'
+    #line2
+      font-size: 3em
+    #line3
+      font-size: 2.4em
+      font-style: italic
+
+  #meeting-div
+    width: 95%
+    text-align: center
+    font-family: 'Bebas Neue'
+    font-weight: 700
+    margin: 0.5em auto
+    padding: 0.5em
+    border-top: 0.1em solid #000
+    border-bottom: 0.1em solid #000
+
+  #then-div
+    border-top: 0.1em solid #000
+    margin: 1em auto 0 auto
+    padding: 0.5em
+    width: 95%
+    text-align: center
+    font-family: 'Bebas Neue'
+    font-weight: 700
+
+  #next-title
+    text-align: center
+
+  .future-meeting
+    position: relative
+    margin: 0.5rem
+    .meeting-detail
+      width: calc(100% - 1rem)
+      min-height: 2rem
+
+// MEETING DETAIL PAGE
+.meeting-detail
+  .title
+    text-align: center
+    font-weight: 700
+    font-size: 1.5rem
+    text-transform: uppercase
+  .author
+    font-size: 1.25rem
+    font-style: italic
+    text-align: center
+    .by
+      font-size: 0.75rem
+      text-transform: uppercase
+      font-style: normal
+
+
+  .divider
+    border-bottom: 0.1em solid #000
+    margin: 1rem
+
+  .book-categories
+    font-family: 'Bebas Neue'
+    font-weight: 700
+    color: #666
+    display: inline
+    font-style: normal
+    margin: 0 1rem
+
+  .book-description
+    margin: 0 1rem
+    font-style: italic
+    min-height: 10rem
+
+  .book-cover
+    display: block
+    float: right
+    height: 10rem
+    margin: 0 1rem 1rem 1rem
+
+  .book-buy
+    line-height: 1.5
+    font-family: 'Bebas Neue'
+    font-weight: 700
+    padding-top: 0.5em
+    text-align: center
+    ul
+      display: inline
+      li
+        display: inline
+        margin: 0 0.5em
+      li:last-child
+        margin-right: 0
+      a
+        color: #003399
+        text-decoration: underline
+
+

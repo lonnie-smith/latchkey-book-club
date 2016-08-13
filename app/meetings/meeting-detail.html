@@ -1,0 +1,33 @@
+<div class="card-scroll-wrapper">
+
+  <div class="card meeting-detail">
+    <div class="card-inner">
+
+    <div class="title">{{ctrl.meeting.title}}</div>
+    <div class="author">
+      <span class="by">by</span>
+      {{ctrl.meeting.author}}
+    </div>
+
+    <div class="divider"></div>
+    <div class="book-categories">{{ctrl.meeting.categories}}</div>
+    <div class="description-block">
+      <img class="book-cover" ng-show="ctrl.meeting.imgUrl" ng-src="{{ctrl.meeting.imgUrl}}" />
+      <div class="book-description">{{ctrl.meeting.description}}</div>
+    </div>
+
+    <div class="book-buy" ng-show="ctrl.meeting.buyLinks.length">
+      <div class="divider"></div>
+      Find it at:
+      <ul>
+        <li ng-repeat="lnk in ctrl.meeting.buyLinks">
+          <a ng-show="lnk.url" ng-href="{{lnk.url}}" target="_blank">{{lnk.description}}</a>
+        </li>
+      </ul>
+    </div>
+
+
+    </div>
+  </div>
+
+</div>

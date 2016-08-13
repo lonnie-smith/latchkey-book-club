@@ -1,0 +1,62 @@
+<div class="card-scroll-wrapper">
+
+  <div id="{{ctrl.thisMeeting.id}}" class="card this-meeting">
+    <div class="card-inner">
+
+      <h1>
+        <span id="line1">The</span><br />
+        <span id="line2">LATCHKEY</span><br />
+        <span id="line3">Book Club</span>
+      </h1>
+
+      <div id="meeting-div">NEXT UP</div>
+
+      <div class="meeting-content">
+        <div class="book-detail">
+          <img ng-show="ctrl.thisMeeting.imgUrl" ng-src="{{ctrl.thisMeeting.imgUrl}}" />
+          <a class="expand-detail" ng-href="#/meeting/{{ctrl.thisMeeting.id}}"></a>
+        </div>
+
+        <div class="meeting-detail">
+          <div class="meeting-date">{{ctrl.thisMeeting.dateString}}</div>
+          <div class="meeting-title">{{ctrl.thisMeeting.title}}</div>
+          <div class="meeting-author"><span class="byline">by</span> {{ctrl.thisMeeting.author}}</div>
+          <div class="meeting-location">{{ctrl.thisMeeting.host}}</div>
+          <div class="meeting-location-detail">{{ctrl.thisMeeting.location}}</div>
+          <div class="meeting-time">{{ctrl.thisMeeting.time}}</div>
+        </div>
+      </div>
+      <div id="then-div">FUTURE TITLES</div>
+      <div class="future-meeting" ng-repeat="m in ctrl.futureMeetings">
+        <div class="meeting-detail">
+        <strong>{{m.dateString}}</strong><br />
+        <i>{{m.title}}</i> <span style="white-space:nowrap;"><span class="byline">by</span> {{m.author}}</span>
+        </div>
+        <a class="expand-detail" ng-href="#/meeting/{{m.id}}"></a>
+
+      </div>
+    </div>
+  </div>
+
+  <div id="{{m.id}}" class="card past-meeting" ng-repeat="m in ctrl.pastMeetings">
+    <div class="card-inner">
+      <div class="meeting-content">
+        <div class="book-detail">
+          <img ng-show="m.imgUrl" ng-src="{{m.imgUrl}}" />
+             <a class="expand-detail" ng-href="#/meeting/{{m.id}}"></a>
+          </div>
+        <div class="meeting-detail">
+          <div class="meeting-date">{{m.dateString}}</div>
+          <div class="meeting-title">{{m.title}}</div>
+          <div class="meeting-author"><span class="byline">by</span> {{m.author}}</div>
+          <div class="meeting-location">{{m.host}}</div>
+          <div class="meeting-location-detail">{{m.location}}</div>
+          <div class="meeting-time">{{m.time}}</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</div>
+

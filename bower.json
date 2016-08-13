@@ -1,0 +1,17 @@
+{
+  "name": "latchkey",
+  "version": "0.0.0",
+  "authors": [
+    "Lonnie Smith <lawrence.smith.3@gmail.com>"
+  ],
+  "description": "Web page for the Latchkey Book Club",
+  "ignore": [],
+  "main": [],
+  "dependencies": {
+    "angular": "~1.5.7",
+    "angular-route": "~1.5.7",
+    "angular-sanitize": "~1.5.7",
+    "angular-animate": "~1.5.7"
+  },
+  "devDependencies": {}
+}

@@ -1,0 +1,19 @@
+{
+  "name": "latchkey",
+  "version": "0.0.1",
+  "private": true,
+  "description": "Web page for the Latchkey book group",
+  "author": "Lonnie Smith <lawrence.smith.3@gmail.com>",
+  "scripts": {},
+  "devDependencies": {
+    "grunt": "^1.0.0",
+    "grunt-contrib-clean": "^1.0.0",
+    "grunt-contrib-coffee": "^1.0.0",
+    "grunt-contrib-connect": "^1.0.2",
+    "grunt-contrib-copy": "^1.0.0",
+    "grunt-contrib-sass": "^1.0.0",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-shell": "^1.3.0"
+  },
+  "dependencies": {}
+}

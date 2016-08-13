@@ -1,0 +1,15 @@
+# OS junk
+.DS_Store
+Thumbs.db
+.sass-cache/*
+
+# packages
+node_modules/*
+bower_components/*
+
+# compiled files & sourcemaps
+app/_compiled/*
+
+# build files
+build/
+*.zip
