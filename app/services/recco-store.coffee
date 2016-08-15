@@ -30,17 +30,15 @@ angular.module('app').factory 'reccoStore', ['Recco', 'googleSpreadsheetData', (
       @reccos.sort(rSort)
 
     _getReccosByDate: () =>
-      rVal = []
-      currentDate = null
-      batch = null
+      idx = {}
       for r in @reccos
-        if r.date isnt currentDate
-          rVal.push(batch) if batch?
-          batch = {month: r.month, reccos: []}
-          currentDate = r.date
-        batch.reccos.push(r)
-      rVal.push(batch)
-      return rVal
+        key = r.date.getTime()
+        idx[key] ||= []
+        idx[key].push(r)
+      list = []
+      for key in Object.keys(idx).sort().reverse()
+        list.push {month: idx[key][0].month, reccos: idx[key]}
+      return list
 
     _buildTagIndex: () =>
       idx = {}

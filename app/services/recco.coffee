@@ -8,6 +8,7 @@ angular.module('app').factory 'Recco', [() ->
       tags = "Misc" if tags.length is 0
       @tags = tags.split(/\s*,\s*/)
       @primaryTag = @tags[0]
+      @iconUrl = './img/' + @primaryTag.replace('/\s+/', '') + '.svg'
 
     _parseDate: (str) ->
       [m,d,y] = (parseInt(x,10) for x in str.split('/'))

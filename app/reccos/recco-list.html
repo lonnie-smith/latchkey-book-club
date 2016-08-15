@@ -1,1 +1,24 @@
-RECCOS PARTIAL
+<div class="card-scroll-wrapper">
+
+  <div id="reccos-{{meeting.month.replace(' ', '-')}}" class="card recco-by-meeting" ng-repeat="meeting in ctrl.reccoStore.reccosByDate">
+    <div class="card-inner">
+      <div class="meeting-header">{{meeting.month}}</div>
+      <div class="recco" ng-repeat="recco in meeting.reccos">
+        <table class="recco-layout-table">
+          <tr>
+            <td class="recco-icon">
+              <img ng-src="{{recco.iconUrl}}" onerror="this.src='./img/Misc.svg'" />
+            </td>
+            <td class="recco-text">
+              <span class="recommender">{{recco.recommender}}</span><br />
+              <span class="title">{{recco.title}}</span>
+            <td class="recco-detail-cell">
+              ❯
+            </td>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+
+</div>
