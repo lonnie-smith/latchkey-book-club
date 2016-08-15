@@ -1,5 +1,5 @@
 angular.module('app').controller('MeetingDetailCtrl', [
-  'Meeting', 'mtgStore', '$scope', '$routeParams', (Meeting, mtgStore, $scope, $routeParams) ->
+  'Meeting', 'mtgStore', '$routeParams', (Meeting, mtgStore, $routeParams) ->
     return new class MeetingDetailCtrl
       constructor: () ->
         @store = mtgStore
