@@ -9,6 +9,7 @@ angular.module('app').factory 'reccoStore', ['Recco', 'googleSpreadsheetData', (
       @tagList = @_buildTagList()
       @recommenderIndex = @_buildRecommenderIndex()
       @idIndex = @_buildIdIndex()
+      @monthIndex = @_buildMonthIndex()
 
     _sortReccos: () ->
       rSort = (a, b) ->
@@ -56,6 +57,13 @@ angular.module('app').factory 'reccoStore', ['Recco', 'googleSpreadsheetData', (
         idx[r.recommender].push(r)
       return idx
 
+    _buildMonthIndex: () =>
+      idx = {}
+      for r in @reccos
+        idx[r.month] ||= []
+        idx[r.month].push(r)
+      return idx
+
     _buildIdIndex: () =>
       idx = {}
       idx[r.id] = r for r in @reccos
@@ -70,6 +78,27 @@ angular.module('app').factory 'reccoStore', ['Recco', 'googleSpreadsheetData', (
      * @return {Recco} — recco matching `id` or `undefined`
     ###
     getRecco: (id) => return @idIndex[id]
+
+    ###*
+     * @param {String} recommender
+     * @return {Array} array of reccommendations
+    ###
+    getReccosByRecommender: (recommender) => @recommenderIndex[recommender]
+
+    ###*
+     * @param {String} tag
+     * @return {Array} array of reccommendations
+    ###
+    getReccosByTag: (tag) => @tagIndex[tag]
+
+    ###*
+     * @param {String} month
+     * @return {Array} array of reccommendations
+    ###
+    getReccosByMonth: (month) =>
+      console.debug @monthIndex[month]
+      @monthIndex[month]
+
 
 
 

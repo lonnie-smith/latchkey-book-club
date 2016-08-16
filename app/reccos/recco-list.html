@@ -1,23 +1,35 @@
 <div class="card-scroll-wrapper">
 
-  <div id="reccos-{{meeting.month.replace(' ', '-')}}" class="card recco-by-meeting" ng-repeat="meeting in ctrl.reccoStore.reccosByDate">
+  <!-- DEFAULT VIEW -->
+  <div id="reccos-{{meeting.month.replace(' ', '-')}}"
+    ng-show="!ctrl.recommender &amp;&amp; !ctrl.tag"
+    class="card recco-list-card"
+    ng-repeat="meeting in ctrl.meetingList">
     <div class="card-inner">
-      <div class="meeting-header">{{meeting.month}}</div>
+      <h1>{{meeting.month}}</h1>
       <div class="recco" ng-repeat="recco in meeting.reccos" ng-click="ctrl.gotoRecco(recco)">
-        <table class="recco-layout-table">
-          <tr>
-            <td class="recco-icon">
-              <img ng-src="{{recco.iconUrl}}" onerror="this.src='./img/Misc.svg'" />
-            </td>
-            <td class="recco-text">
-              <span class="recommender">{{recco.recommender}}</span><br />
-              <span class="title">{{recco.title}}</span>
-            <td class="recco-detail-cell">
-              <a class="expand-detail" ng-href="#/recco/{{recco.id}}"></a>
-            </td>
-          </td>
-        </tr>
-      </table>
+        <ng-include src="'reccos/recco-list-element.html'"></ng-include>
+      </div>
+    </div>
+  </div>
+
+  <!-- RECOMMENDER VIEW -->
+  <div class="card recco-list-card" ng-show="ctrl.recommender">
+    <div class="card-inner">
+      <h1>{{ctrl.recommender}}</h1>
+      <div class="recco" ng-repeat="recco in ctrl.filterList">
+        <ng-include src="'reccos/recco-list-element.html'"></ng-include>
+      </div>
+    </div>
+  </div>
+
+  <!-- TAG VIEW -->
+  <div class="card recco-list-card" ng-show="ctrl.tag">
+    <div class="card-inner">
+      <h1><img ng-src="img/{{ctrl.tag}}.svg" onerror="this.src='./img/Misc.svg'" /> {{ctrl.tag}}</h1>
+      <div class="recco" ng-repeat="recco in ctrl.filterList">
+        <ng-include src="'reccos/recco-list-element.html'"></ng-include>
+      </div>
     </div>
   </div>
 

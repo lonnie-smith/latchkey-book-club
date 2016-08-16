@@ -1,11 +1,18 @@
 // list by meeting
-.card.recco-by-meeting
-  .meeting-header
+.card.recco-list-card
+  h1
     text-align: center
     font-weight: 700
     font-size: 1.5rem
+    // line-height: 2rem
     text-transform: uppercase
     margin-bottom: 0.5rem
+    img
+      height: 2rem
+      width: 2rem
+      display: inline-block
+      line-height: 1
+      vertical-align: text-top
 
   .recco
     padding: 0.25rem 0
@@ -25,6 +32,8 @@
           font-style: italic
         .title
           text-transform: uppercase
+        .date
+          font-style: italic
       .recco-detail-cell
         width: 1rem
 
@@ -56,8 +65,9 @@
       width: 6.5rem
     td
       padding-left: 0.25rem
-      font-size: 1.2rem
-      font-weight: 700
+      a
+        font-size: 1.2rem
+        font-weight: 700
     .tags
       a
         margin-right: 0.5rem

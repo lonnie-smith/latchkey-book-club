@@ -13,22 +13,28 @@
         </tr>
         <tr>
           <td></td>
-          <td class="read-more">
+          <td class="read-more" ng-show="ctrl.recco.url">
               <a ng-href="{{ctrl.recco.url}}" target="_blank">Read more</a>&hellip;
           </td>
         </tr>
       </table>
       <table class="recco-footer-layout">
         <tr>
+          <th class="byline">meeting</th>
+          <td class="date">
+            <a ng-href="#/reccos/month/{{ctrl.recco.month}}">{{ctrl.recco.month}}</a>
+          </td>
+        </tr>
+        <tr>
           <th class="byline">recommender</th>
           <td class="recommender">
-            <a ng-href="#/reccos/recommender/{{ctrl.recco.idify(ctrl.recco.recommender)}}">{{ctrl.recco.recommender}}</a>
+            <a ng-href="#/reccos/recommender/{{ctrl.recco.recommender}}">{{ctrl.recco.recommender}}</a>
           </td>
         </tr>
         <tr>
           <th class="byline">filed under</th>
           <td class="tags">
-            <a ng-href="#/reccos/tag/{{ctrl.recco.idify(t)}}" ng-repeat="t in ctrl.recco.tags">{{t}}&#8203;</a>
+            <a ng-href="#/reccos/tag/{{t}}" ng-repeat="t in ctrl.recco.tags">{{t}}&#8203;</a>
           </td>
         </tr>
       </table>
