@@ -59,21 +59,21 @@ angular.module('app').factory 'Meeting', ['$http', '$q', ($http, $q) ->
       return [] unless @author and @title
       return [
         {
-          url: "http://catalog.kclibrary.org/client/en_US/kclibrary/search/results?qu=&qu=TITLE%3D#{@title.replace(/\s+/,'+')}+&qu=AUTHOR%3D#{@author.replace(/\s+/,'+')}"
+          url: "http://catalog.kclibrary.org/client/en_US/kclibrary/search/results?qu=&qu=TITLE%3D#{@title.replace(/\s+/g,'+')}+&qu=AUTHOR%3D#{@author.replace(/\s+/g,'+')}"
           description: "KCPL"
         }
         {
-          url: "http://www.rainydaybooks.com/search/site/#{@title.replace(/\s+/,'%20')}%20#{@author.replace(/\s+/,'%20')}"
+          url: "http://www.rainydaybooks.com/search/site/#{@title.replace(/\s+/g,'%20')}%20#{@author.replace(/\s+/g,'%20')}"
           description: "Rainy Day"
         }
 
         {
-          url: "http://www.powells.com/SearchResults?kw=any_words:#{@title.replace(/\s+/, '+')}&au=#{@author.replace(/\s+/, '+')}"
+          url: "http://www.powells.com/SearchResults?kw=any_words:#{@title.replace(/\s+/g, '+')}&au=#{@author.replace(/\s+/g, '+')}"
           description: "Powell’s"
         }
 
         {
-          url: "http://www.abebooks.com/servlet/SearchResults?an=#{@author.replace(/\s+/, '+')}&sts=t&tn=#{@title.replace(/\s+/, '+')}"
+          url: "http://www.abebooks.com/servlet/SearchResults?an=#{@author.replace(/\s+/g, '+')}&sts=t&tn=#{@title.replace(/\s+/g, '+')}"
           description: "AbeBooks"
         }
 
