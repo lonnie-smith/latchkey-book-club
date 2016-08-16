@@ -24,13 +24,9 @@
 
 // Carat card expansion links
 a.expand-detail
-  display: block
   text-align: center
   color: #000
-  position: absolute
-  top: 50%
-  right: 0
-  transform: translateY(-50%)
+  text-decoration: none
 
 a.expand-detail:focus
   outline: none
@@ -39,3 +35,6 @@ a.expand-detail:before
   content: '❯'
   font-size: 1.25em
   line-height: 1
+
+a.expand-detail.back:before
+  content: '❮'

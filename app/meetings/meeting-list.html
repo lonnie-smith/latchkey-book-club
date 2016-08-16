@@ -28,12 +28,13 @@
       </div>
       <div id="then-div">FUTURE TITLES</div>
       <div class="future-meeting" ng-repeat="m in ctrl.futureMeetings">
-        <div class="meeting-detail">
-        <strong>{{m.dateString}}</strong><br />
-        <i>{{m.title}}</i> <span style="white-space:nowrap;"><span class="byline">by</span> {{m.author}}</span>
+        <div class="meeting-content">
+          <div class="meeting-detail">
+          <strong>{{m.dateString}}</strong><br />
+          <i>{{m.title}}</i> <span style="white-space:nowrap;"><span class="byline">by</span> {{m.author}}</span>
+          </div>
+          <a class="expand-detail" ng-href="#/meeting/{{m.id}}"></a>
         </div>
-        <a class="expand-detail" ng-href="#/meeting/{{m.id}}"></a>
-
       </div>
     </div>
   </div>

@@ -1,0 +1,37 @@
+<div class="card-scroll-wrapper">
+  <div class="card recco-detail">
+    <div class="card-inner">
+      <div class="title">{{ctrl.recco.title}}</div>
+      <table class="recco-description-layout">
+        <tr>
+          <td class="back-btn" ng-click="ctrl.goBack($event)">
+            <a class="expand-detail back" ng-click="ctrl.goBack($event)"></a>
+          </td>
+          <td class="description" ng-click="ctrl.goBack($event)">
+            {{ctrl.recco.description}}
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td class="read-more">
+              <a ng-href="{{ctrl.recco.url}}" target="_blank">Read more</a>&hellip;
+          </td>
+        </tr>
+      </table>
+      <table class="recco-footer-layout">
+        <tr>
+          <th class="byline">recommender</th>
+          <td class="recommender">
+            <a ng-href="#/reccos/recommender/{{ctrl.recco.idify(ctrl.recco.recommender)}}">{{ctrl.recco.recommender}}</a>
+          </td>
+        </tr>
+        <tr>
+          <th class="byline">filed under</th>
+          <td class="tags">
+            <a ng-href="#/reccos/tag/{{ctrl.recco.idify(t)}}" ng-repeat="t in ctrl.recco.tags">{{t}}&#8203;</a>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+</div>

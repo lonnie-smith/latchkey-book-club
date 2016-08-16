@@ -3,7 +3,7 @@
   <div id="reccos-{{meeting.month.replace(' ', '-')}}" class="card recco-by-meeting" ng-repeat="meeting in ctrl.reccoStore.reccosByDate">
     <div class="card-inner">
       <div class="meeting-header">{{meeting.month}}</div>
-      <div class="recco" ng-repeat="recco in meeting.reccos">
+      <div class="recco" ng-repeat="recco in meeting.reccos" ng-click="ctrl.gotoRecco(recco)">
         <table class="recco-layout-table">
           <tr>
             <td class="recco-icon">
@@ -13,7 +13,7 @@
               <span class="recommender">{{recco.recommender}}</span><br />
               <span class="title">{{recco.title}}</span>
             <td class="recco-detail-cell">
-              ❯
+              <a class="expand-detail" ng-href="#/recco/{{recco.id}}"></a>
             </td>
           </td>
         </tr>

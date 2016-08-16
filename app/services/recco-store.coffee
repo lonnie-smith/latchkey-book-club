@@ -8,6 +8,7 @@ angular.module('app').factory 'reccoStore', ['Recco', 'googleSpreadsheetData', (
       @tagIndex = @_buildTagIndex()
       @tagList = @_buildTagList()
       @recommenderIndex = @_buildRecommenderIndex()
+      @idIndex = @_buildIdIndex()
 
     _sortReccos: () ->
       rSort = (a, b) ->
@@ -55,9 +56,21 @@ angular.module('app').factory 'reccoStore', ['Recco', 'googleSpreadsheetData', (
         idx[r.recommender].push(r)
       return idx
 
+    _buildIdIndex: () =>
+      idx = {}
+      idx[r.id] = r for r in @reccos
+      return idx
+
     _buildTagList: () =>
       @tagIndex ||= @_buildTagIndex()
       return Object.keys(@tagIndex).sort()
+
+    ###*
+     * @param {String} id — id of recommendation to return
+     * @return {Recco} — recco matching `id` or `undefined`
+    ###
+    getRecco: (id) => return @idIndex[id]
+
 
 
 

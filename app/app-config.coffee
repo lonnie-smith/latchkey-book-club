@@ -22,6 +22,33 @@ angular.module('app').config ['$routeProvider', ($routeProvider) ->
     resolve: {rcoStore: reccoStoreRouteResolver}
   }
 
+  # TODO
+  $routeProvider.when '/reccos/recommender/:recommenderId', {
+    templateUrl: 'reccos/recco-list.html',
+    controller: 'ReccoListCtrl'
+    controllerAs: 'ctrl'
+    resolve: {rcoStore: reccoStoreRouteResolver}
+  }
+
+  # TODO
+  $routeProvider.when '/reccos/tag/:tagId', {
+    templateUrl: 'reccos/recco-list.html',
+    controller: 'ReccoListCtrl'
+    controllerAs: 'ctrl'
+    resolve: {rcoStore: reccoStoreRouteResolver}
+  }
+
+
+
+
+
+  $routeProvider.when '/recco/:reccoId', {
+    templateUrl: 'reccos/recco-detail.html',
+    controller: 'ReccoDetailCtrl',
+    controllerAs: 'ctrl',
+    resolve: {rcoStore: reccoStoreRouteResolver}
+  }
+
   $routeProvider.otherwise {redirectTo: '/'}
 
 ]
