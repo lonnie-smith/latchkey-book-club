@@ -18,11 +18,12 @@
 </head>
 <body>
 
-<img id="img-book-battle" src="img/Swift-Battle.jpg" />
+<!-- <img id="img-book-battle" src="img/Swift-Battle.jpg" /> -->
 
-<ng-view></ng-view>
-
-<ng-include src="'layout/navbar.html'"></ng-include>
+<div id="top-container">
+  <ng-view></ng-view>
+  <ng-include src="'layout/navbar.html'"></ng-include>
+</div>
 
 <script src="../bower_components/angular/angular.js"></script>
 <script src="../bower_components/angular-route/angular-route.js"></script>
