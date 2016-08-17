@@ -15,39 +15,39 @@ angular.module('app').config ['$routeProvider', ($routeProvider) ->
     resolve: {mtgStore: meetingStoreRouteResolver}
   }
 
-  $routeProvider.when '/reccos', {
-    templateUrl: 'reccos/recco-list.html',
-    controller: 'ReccoListCtrl'
+  $routeProvider.when '/recos', {
+    templateUrl: 'recos/reco-list.html',
+    controller: 'RecoListCtrl'
     controllerAs: 'ctrl'
-    resolve: {rcoStore: reccoStoreRouteResolver}
+    resolve: {rcoStore: recoStoreRouteResolver}
   }
 
-  $routeProvider.when '/reccos/recommender/:recommenderId', {
-    templateUrl: 'reccos/recco-list.html',
-    controller: 'ReccoListCtrl'
+  $routeProvider.when '/recos/recommender/:recommenderId', {
+    templateUrl: 'recos/reco-list.html',
+    controller: 'RecoListCtrl'
     controllerAs: 'ctrl'
-    resolve: {rcoStore: reccoStoreRouteResolver}
+    resolve: {rcoStore: recoStoreRouteResolver}
   }
 
-  $routeProvider.when '/reccos/tag/:tagId', {
-    templateUrl: 'reccos/recco-list.html',
-    controller: 'ReccoListCtrl'
+  $routeProvider.when '/recos/tag/:tagId', {
+    templateUrl: 'recos/reco-list.html',
+    controller: 'RecoListCtrl'
     controllerAs: 'ctrl'
-    resolve: {rcoStore: reccoStoreRouteResolver}
+    resolve: {rcoStore: recoStoreRouteResolver}
   }
 
-  $routeProvider.when '/reccos/month/:monthId', {
-    templateUrl: 'reccos/recco-list.html',
-    controller: 'ReccoListCtrl'
+  $routeProvider.when '/recos/month/:monthId', {
+    templateUrl: 'recos/reco-list.html',
+    controller: 'RecoListCtrl'
     controllerAs: 'ctrl'
-    resolve: {rcoStore: reccoStoreRouteResolver}
+    resolve: {rcoStore: recoStoreRouteResolver}
   }
 
-  $routeProvider.when '/recco/:reccoId', {
-    templateUrl: 'reccos/recco-detail.html',
-    controller: 'ReccoDetailCtrl',
+  $routeProvider.when '/reco/:recoId', {
+    templateUrl: 'recos/reco-detail.html',
+    controller: 'RecoDetailCtrl',
     controllerAs: 'ctrl',
-    resolve: {rcoStore: reccoStoreRouteResolver}
+    resolve: {rcoStore: recoStoreRouteResolver}
   }
 
   $routeProvider.otherwise {redirectTo: '/'}
@@ -59,6 +59,6 @@ meetingStoreRouteResolver = (meetingStore) ->
   return meetingStore.load()
 meetingStoreRouteResolver.$inject = ['meetingStore']
 
-reccoStoreRouteResolver = (reccoStore) ->
-  return reccoStore.load()
-reccoStoreRouteResolver.$inject = ['reccoStore']
+recoStoreRouteResolver = (recoStore) ->
+  return recoStore.load()
+recoStoreRouteResolver.$inject = ['recoStore']

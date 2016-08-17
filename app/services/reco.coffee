@@ -1,6 +1,6 @@
-angular.module('app').factory 'Recco', [() ->
+angular.module('app').factory 'Reco', [() ->
 
-  return class Recco
+  return class Reco
     constructor: ({month, @recommender, @title, tags, @description, @url}) ->
       @date = @_parseDate(month)
       @month = @_stringifyDate(@date)

@@ -1,17 +1,17 @@
-<table class="recco-layout-table">
+<table class="reco-layout-table">
   <tr>
-    <td class="recco-icon">
-      <img ng-src="{{recco.iconUrl}}" onerror="this.src='./img/Misc.svg'" />
+    <td class="reco-icon">
+      <img ng-src="{{reco.iconUrl}}" onerror="this.src='./img/Misc.svg'" />
     </td>
-    <td class="recco-text">
-      <span class="recommender" ng-hide="ctrl.recommender">{{recco.recommender}}<br /></span>
-      <span class="title">{{recco.title}}</span>
+    <td class="reco-text">
+      <span class="recommender" ng-hide="ctrl.recommender">{{reco.recommender}}<br /></span>
+      <span class="title">{{reco.title}}</span>
       <span class="date" ng-show="ctrl.recommender || ctrl.tag">
-        <br />{{recco.month}}
+        <br />{{reco.month}}
       </span>
     </td>
-    <td class="recco-detail-cell">
-      <a class="expand-detail" ng-href="#/recco/{{recco.id}}"></a>
+    <td class="reco-detail-cell">
+      <a class="expand-detail" ng-href="#/reco/{{reco.id}}"></a>
     </td>
   </tr>
 </table>

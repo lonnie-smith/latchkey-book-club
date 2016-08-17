@@ -1,9 +1,9 @@
-angular.module('app').controller('ReccoDetailCtrl', [
-  'rcoStore', 'Recco', '$routeParams', '$window', (rcoStore, Recco, $routeParams, $window) ->
-    return new class ReccoDetailCtrl
+angular.module('app').controller('RecoDetailCtrl', [
+  'rcoStore', 'Reco', '$routeParams', '$window', (rcoStore, Reco, $routeParams, $window) ->
+    return new class RecoDetailCtrl
       constructor: () ->
         @store = rcoStore
-        @recco = rcoStore.getRecco($routeParams.reccoId)
+        @reco = rcoStore.getReco($routeParams.recoId)
 
       goBack: (evt) ->
         # TODO - go to previous view, not just previous page.

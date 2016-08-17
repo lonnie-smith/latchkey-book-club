@@ -4,6 +4,6 @@ angular.module('app', [
 
   # feature modules go here, e.g.,
   # 'app.meetings',
-  # 'app.reccos'
+  # 'app.recos'
   ])
 
