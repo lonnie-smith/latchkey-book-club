@@ -47,12 +47,6 @@
   font-weight: 700
   font-style: normal
 
-
-// LAYOUT
-html, body
-  height: 100%
-  width: 100%
-
 // FONT SIZES
 $font-break-low: 340px
 $font-break-medium: 600px
@@ -66,15 +60,29 @@ html
 // larger size
 @media (min-width: $font-break-medium) and (min-height: $font-break-medium)
   html
-    font-size: 24px
+    font-size: 15px
+
+// FOUNDATION
+html, body
+  height: 100%
+  width: 100%
 
 #top-container
   height: 100%
   width: 100%
+  background-color: #e7e3d2
   position: absolute
   background-image: url('../../img/Swift-Battle.jpg')
-  background-size: 100%
   background-repeat: no-repeat
+
+@media (orientation: portrait)
+  #top-container
+    background-size: 100%
+
+@media (orientation: landscape)
+  #top-container
+    background-size: 50%
+
 
 // frequently used style elements
 .byline

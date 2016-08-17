@@ -3,9 +3,18 @@
   position: fixed
   top: 0
   left: 0
-  width: 100%
   height: calc(100% - 3em)
   overflow: scroll
+
+
+@media (orientation: portrait)
+  .card-scroll-wrapper
+    width: 100%
+
+@media (orientation: landscape)
+  .card-scroll-wrapper
+    width: 50%
+    margin-left: 50%
 
 .card
   position: relative
@@ -26,6 +35,9 @@
   position: relative
   height: calc(100% - 30px)
   background-color: transparent
+@media (orientation: landscape)
+  .card-scroll-spacer
+    height: 0
 
 // Carat card expansion links
 a.expand-detail
