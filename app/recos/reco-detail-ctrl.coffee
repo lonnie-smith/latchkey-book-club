@@ -4,6 +4,7 @@ angular.module('app').controller('RecoDetailCtrl', [
       constructor: () ->
         @store = rcoStore
         @reco = rcoStore.getReco($routeParams.recoId)
+        document.body.scrollTop = 0
 
       goBack: (evt) ->
         # TODO - go to previous view, not just previous page.

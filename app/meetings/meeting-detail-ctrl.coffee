@@ -4,5 +4,6 @@ angular.module('app').controller('MeetingDetailCtrl', [
       constructor: () ->
         @store = mtgStore
         @meeting = mtgStore.getMeeting($routeParams.meetingId)
+        document.body.scrollTop = 0
 
 ])
