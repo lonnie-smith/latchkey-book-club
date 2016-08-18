@@ -12,5 +12,3 @@ angular.module('app').controller('MeetingListCtrl', [
         $location.url "/meeting/#{id}"
 
 ])
-
-
