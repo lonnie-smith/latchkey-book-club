@@ -12,7 +12,7 @@
   .book-detail
     width: 5.5rem
     position: absolute
-    right: 0
+    right: 0.5rem
     top: 50%
     transform: translateY(-50%)
 
@@ -116,20 +116,40 @@
     font-family: 'Bebas Neue'
     font-weight: 700
     color: #666
-    display: inline
+    display: block
     font-style: normal
     margin: 0 1rem
 
-  .book-description
-    margin: 0 1rem
-    font-style: italic
+  .description-block
+    width: 100%
     min-height: 10rem
+    position: relative
+    display: inline-block
 
-  .book-cover
-    display: block
-    float: right
-    height: 10rem
-    margin: 0 1rem 1rem 1rem
+    .book-description
+      margin: 0 1rem 0 2.25rem
+      font-style: italic
+      min-height: 10rem
+      position: relative
+
+    .back-nav
+      width: 2.5rem
+      height: 10rem
+      position: absolute
+      top: 0
+      left: 0
+      a
+        position: absolute
+        display: block
+        top: 5rem
+        transform: translateY(-50%)
+        left: 1rem
+
+    .book-cover
+      display: block
+      float: right
+      height: 10rem
+      margin: 0 0 1rem 1rem
 
   .book-buy
     line-height: 1.5

@@ -12,8 +12,13 @@
     <div class="divider"></div>
     <div class="book-categories">{{ctrl.meeting.categories}}</div>
     <div class="description-block">
-      <img class="book-cover" ng-show="ctrl.meeting.imgUrl" ng-src="{{ctrl.meeting.imgUrl}}" />
-      <div class="book-description">{{ctrl.meeting.description}}</div>
+      <div class="book-description">
+        <img class="book-cover" ng-show="ctrl.meeting.imgUrl" ng-src="{{ctrl.meeting.imgUrl}}" />
+        {{ctrl.meeting.description}}
+      </div>
+      <div class="back-nav" ng-click="ctrl.goBack($event)">
+        <a class="expand-detail back" ng-click="ctrl.goBack($event)"></a>
+      </div>
     </div>
 
     <div class="book-buy" ng-show="ctrl.meeting.buyLinks.length">
