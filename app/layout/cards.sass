@@ -1,19 +1,13 @@
 // general card set-up
-.card-scroll-wrapper
-  position: fixed
-  top: 0
-  left: 0
-  height: calc(100% - 3em)
-  overflow: scroll
-  -webkit-overflow-scrolling: touch
-
+.card-list
+  padding-bottom: 3em // account for navbar
 
 @media (orientation: portrait)
-  .card-scroll-wrapper
+  .card-list
     width: 100%
 
 @media (orientation: landscape)
-  .card-scroll-wrapper
+  .card-list
     width: 50%
     margin-left: 50%
 
@@ -41,12 +35,11 @@
 
 
 .card-scroll-spacer
-  position: relative
-  height: calc(100% - 30px)
+  height: 3em
   background-color: transparent
-@media (orientation: landscape)
+@media (orientation: portrait)
   .card-scroll-spacer
-    height: 0
+    padding-bottom: 200%
 
 // Carat card expansion links
 a.expand-detail
