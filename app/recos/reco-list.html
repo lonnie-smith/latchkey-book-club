@@ -1,47 +1,49 @@
 <div class="card-list">
 
-  <!-- DEFAULT VIEW -->
-  <div id="recos-{{meeting.month.replace(' ', '-')}}"
-    ng-show="!ctrl.recommender &amp;&amp; !ctrl.tag"
-    class="card reco-list-card"
-    ng-repeat="meeting in ctrl.meetingList">
+  <div class="card">
     <div class="card-inner">
-      <h1>
-        <div class="view-descriptor">Latchkey Culural Recommendations <span style="font-style:normal;">from</span></div>
-        {{meeting.month}}
-      </h1>
-      <div class="reco" ng-repeat="reco in meeting.recos" ng-click="ctrl.gotoReco(reco)">
-        <ng-include src="'recos/reco-list-element.html'"></ng-include>
-      </div>
-    </div>
-  </div>
 
-  <!-- RECOMMENDER VIEW -->
-  <div class="card reco-list-card" ng-show="ctrl.recommender">
-    <div class="card-inner">
-      <h1>
-        <div class="view-descriptor">Latchkey Cultural Recommendations <span style="font-style:normal;">by</span></div>
-        {{ctrl.recommender}}
-      </h1>
-      <div class="reco" ng-repeat="reco in ctrl.filterList">
-        <ng-include src="'recos/reco-list-element.html'"></ng-include>
-      </div>
-    </div>
-  </div>
+      <!-- DEFAULT VIEW -->
+      <div id="recos-{{meeting.month.replace(' ', '-')}}"
+        ng-show="!ctrl.recommender &amp;&amp; !ctrl.tag"
+        class="reco-list"
+        ng-repeat="meeting in ctrl.meetingList">
+          <h1 ng-class="{first: $first}">
+            <div class="view-descriptor">Latchkey Culural Recommendations <span style="font-style:normal;">from</span></div>
+            {{meeting.month}}
+          </h1>
+          <div class="reco" ng-repeat="reco in meeting.recos" ng-click="ctrl.gotoReco(reco)">
+            <ng-include src="'recos/reco-list-element.html'"></ng-include>
+          </div>
+      </div> <!-- /default view -->
 
-  <!-- TAG VIEW -->
-  <div class="card reco-list-card" ng-show="ctrl.tag">
-    <div class="card-inner">
-      <h1>
-        <div class="view-descriptor">Latcheky Cultural Recommendations <span style="font-style:normal;">filed under</span></div>
-        <img ng-src="img/{{ctrl.tag}}.svg" onerror="this.src='./img/Misc.svg'" />
-        {{ctrl.tag}}
+      <!-- RECOMMENDER VIEW -->
+      <div class="reco-list" ng-show="ctrl.recommender">
+        <h1 class="first">
+          <div class="view-descriptor">Latchkey Cultural Recommendations <span style="font-style:normal;">by</span></div>
+          {{ctrl.recommender}}
         </h1>
-      <div class="reco" ng-repeat="reco in ctrl.filterList">
-        <ng-include src="'recos/reco-list-element.html'"></ng-include>
+        <div class="reco" ng-repeat="reco in ctrl.filterList">
+          <ng-include src="'recos/reco-list-element.html'"></ng-include>
+        </div> <!-- /recommender view -->
       </div>
+
+      <!-- TAG VIEW -->
+      <div class="reco-list" ng-show="ctrl.tag">
+        <h1 class="first">
+          <div class="view-descriptor">Latcheky Cultural Recommendations <span style="font-style:normal;">filed under</span></div>
+          <img ng-src="img/{{ctrl.tag}}.svg" onerror="this.src='./img/Misc.svg'" />
+          {{ctrl.tag}}
+          </h1>
+        <div class="reco" ng-repeat="reco in ctrl.filterList">
+          <ng-include src="'recos/reco-list-element.html'"></ng-include>
+        </div>
+      </div> <!-- /tag view -->
+
     </div>
   </div>
+
+
 
   <div class="card-scroll-spacer"></div>
 

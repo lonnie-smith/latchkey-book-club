@@ -1,6 +1,7 @@
 // Meeting cards: shared
 .meeting-content
   position: relative
+  margin: 0 0.5rem
 
   a.expand-detail
     display: block
@@ -12,84 +13,75 @@
   .book-detail
     width: 5.5rem
     position: absolute
-    right: 0.5rem
-    top: 50%
+    right: 0
+    top: calc(50% - 0.25rem)
     transform: translateY(-50%)
 
     img
       display: inline-block
       text-align: center
       vertical-align: middle
-      height: 6em
+      height: 6rem
+
 
   .meeting-detail
-    width: calc(100% - 7em)
-    min-height: 6em
-    margin: 0 0.5rem
+    width: calc(100% - 7rem)
+    min-height: 6rem
 
     .meeting-date
       font-weight: 700
 
     .meeting-title
-      margin-top: 0.33em
+      margin-top: 0.33rem
       font-style: italic
 
     .meeting-author
-      margin-bottom: 0.33em
+      margin-bottom: 0.33rem
 
     .meeting-time
-      font-size: 0.7em
+      font-size: 0.7rem
 
     .meeting-location
-      font-size: 0.7em
+      font-size: 0.7rem
       text-transform: uppercase
       font-weight: 700
     .meeting-location-detail
-      font-size: 0.7em
+      font-size: 0.7rem
       text-transform: uppercase
+
+  .divider
+    padding: 1rem 0 0 0
+    margin: 0 0.5rem 1rem 0
 
 // Header card
 .this-meeting
-  margin-bottom: 3em
+  margin-bottom: 3rem
   h1
     text-align: center
     font-weight: 700
     #line1
       font-family: 'Bebas Neue'
     #line2
-      font-size: 3em
+      font-size: 3rem
     #line3
-      font-size: 2.4em
+      font-size: 2.4rem
       font-style: italic
-
-  #meeting-div
-    width: 95%
-    text-align: center
-    font-family: 'Bebas Neue'
-    font-weight: 700
-    margin: 0.5em auto
-    padding: 0.5em
-    border-top: 0.1em solid #000
-    border-bottom: 0.1em solid #000
-
-  #then-div
-    border-top: 0.1em solid #000
-    margin: 1em auto 0 auto
-    padding: 0.5em
-    width: 95%
-    text-align: center
-    font-family: 'Bebas Neue'
-    font-weight: 700
-
-  #next-title
-    text-align: center
 
   .future-meeting
     position: relative
-    margin: 0.5rem
+    margin: 0.5rem 0
     .meeting-detail
       width: calc(100% - 1rem)
       min-height: 2rem
+
+  .past-meeting
+    .meeting-content
+      margin: 0.5rem 0.5rem
+      padding-bottom: 0.5rem
+      border-bottom: 0.1rem solid #000
+
+  .past-meeting:last-child .meeting-content
+    border-bottom: none
 
 // MEETING DETAIL PAGE
 .meeting-detail
@@ -106,11 +98,6 @@
       font-size: 0.75rem
       text-transform: uppercase
       font-style: normal
-
-
-  .divider
-    border-bottom: 0.1em solid #000
-    margin: 1rem
 
   .book-categories
     font-family: 'Bebas Neue'

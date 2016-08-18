@@ -8,7 +8,7 @@
         <span id="line3">Book Club</span>
       </h1>
 
-      <div id="meeting-div">NEXT UP</div>
+      <div class="section-separator">NEXT UP</div>
 
       <div class="meeting-content" ng-click="ctrl.showDetail($event, ctrl.thisMeeting.id)">
         <div class="book-detail">
@@ -25,7 +25,9 @@
           <div class="meeting-time">{{ctrl.thisMeeting.time}}</div>
         </div>
       </div>
-      <div id="then-div">FUTURE TITLES</div>
+
+      <div class="section-separator">FUTURE MEETINGS</div>
+
       <div class="future-meeting" ng-repeat="m in ctrl.futureMeetings" ng-click="ctrl.showDetail($event, m.id)">
         <div class="meeting-content">
           <div class="meeting-detail">
@@ -35,28 +37,33 @@
           <a class="expand-detail" ng-href="#/meeting/{{m.id}}"></a>
         </div>
       </div>
-    </div>
-  </div>
 
-  <div id="{{m.id}}" class="card past-meeting" ng-repeat="m in ctrl.pastMeetings" ng-click="ctrl.showDetail($event, m.id)">
-    <div class="card-inner">
-      <div class="meeting-content">
-        <div class="book-detail">
-          <img ng-show="m.imgUrl" ng-src="{{m.imgUrl}}" />
-             <a class="expand-detail" ng-href="#/meeting/{{m.id}}"></a>
+
+      <div class="section-separator">PAST MEETINGS</div>
+
+      <div id="{{m.id}}" class="past-meeting" ng-repeat="m in ctrl.pastMeetings" ng-click="ctrl.showDetail($event, m.id)">
+        <div class="meeting-content">
+          <div class="book-detail">
+            <img ng-show="m.imgUrl" ng-src="{{m.imgUrl}}" />
+               <a class="expand-detail" ng-href="#/meeting/{{m.id}}"></a>
+            </div>
+          <div class="meeting-detail">
+            <div class="meeting-date">{{m.dateString}}</div>
+            <div class="meeting-title">{{m.title}}</div>
+            <div class="meeting-author"><span class="byline">by</span> {{m.author}}</div>
+            <div class="meeting-location">{{m.host}}</div>
+            <div class="meeting-location-detail">{{m.location}}</div>
+            <div class="meeting-time">{{m.time}}</div>
           </div>
-        <div class="meeting-detail">
-          <div class="meeting-date">{{m.dateString}}</div>
-          <div class="meeting-title">{{m.title}}</div>
-          <div class="meeting-author"><span class="byline">by</span> {{m.author}}</div>
-          <div class="meeting-location">{{m.host}}</div>
-          <div class="meeting-location-detail">{{m.location}}</div>
-          <div class="meeting-time">{{m.time}}</div>
+          <!-- <div class="divider"></div> -->
         </div>
       </div>
 
+
+
     </div>
   </div>
+
 
   <div class="card-scroll-spacer"></div>
 
