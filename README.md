@@ -13,7 +13,7 @@ The woodcut on the site's front page is the frontispiece from a 1710 edition of 
 
 I try to follow John Papa’s magesterial [Angular Style Guide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md) as much as possible.
 
-I use (CoffeeScript)[http://coffeescript.org] and [SASS](http://sass-lang.com) in my projects wherever possible, partly because I just like whitespace delimited languages, but mostly because I find CoffeeScript’s looping syntax and SASS’s variables so useful that they’re worth the inconvenience.
+I use [CoffeeScript](http://coffeescript.org) and [SASS](http://sass-lang.com) in my projects wherever possible, partly because I just like whitespace delimited languages, but mostly because I find CoffeeScript’s looping syntax and SASS’s variables so useful that they’re worth the inconvenience.
 
 ### How the code is organized.
 * All code for the front-end app goes in `app/`. External dependencies, build scripts, and other fol-de-rol goes in the top-level directory.
@@ -23,3 +23,12 @@ I use (CoffeeScript)[http://coffeescript.org] and [SASS](http://sass-lang.com) i
 * Compiling SASS and CoffeeScript files generates a lot of clutter which I don’t like in my main source folders, so there’s a paralell file structure created under `./app/_compiled` to house compiled files.
 
 ### Setting up a development environment
+
+* Install [Node](https://nodejs.org/) and [Ruby]([https://www.ruby-lang.org/) on your machine if you don’t have them already.
+* Install [Grunt](http://gruntjs.com/): `sudo npm install -g grunt-cli`.
+* Run `npm install` and `bower install` to install dependendencies.
+* Compile the source: `grunt build`.
+* Start a development server: `grunt connect`—then open the page at [http://localhost:8080/app/](http://localhost:8080/app/)
+* Automatically recompile & reload code changes when source files are edited: `grunt watch`
+
+
