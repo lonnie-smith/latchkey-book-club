@@ -13,7 +13,7 @@ The woodcut on the site's front page is the frontispiece from a 1710 edition of 
 
 I try to follow John Papa’s magesterial [Angular Style Guide](https://github.com/johnpapa/angular-styleguide/blob/master/a1/README.md) as much as possible.
 
-I use [CoffeeScript](http://coffeescript.org) and [SASS](http://sass-lang.com) in my projects wherever possible, partly because I just like whitespace delimited languages, but mostly because I find CoffeeScript’s looping syntax and SASS’s variables so useful that they’re worth the inconvenience.
+I use [CoffeeScript](http://coffeescript.org) and [SASS](http://sass-lang.com) in my projects wherever possible, partly because I just like whitespace delimited languages, but mostly because I find SASS variables and CoffeeScript’s looping and object syntax so useful that they’re worth the inconvenience.
 
 ### How the code is organized.
 * All code for the front-end app goes in `app/`. External dependencies, build scripts, and other fol-de-rol goes in the top-level directory.
